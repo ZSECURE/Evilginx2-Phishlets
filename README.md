@@ -1,4 +1,4 @@
-# Evilnginx2-Phishlets
+# Evilginx2-Phishlets
 
 Phislets for Evilnginx2 | Red Team
 
